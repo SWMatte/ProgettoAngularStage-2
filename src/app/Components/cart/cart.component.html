@@ -1,0 +1,32 @@
+<form [formGroup]="cartForm" (ngSubmit)="onSubmit()">
+  <mat-form-field >
+    <mat-label>{{nomeProdotto}}</mat-label>
+    <mat-select name="nomeProdotto" value="{{nomeProdotto}}" formControlName="nomeProd">
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Quantità:</mat-label>
+    <mat-select name="quantitaProdotto" formControlName="quantitaProd">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-stroked-button routerLink="riepilogo/{{cartForm.value.quantitaProd}}" [queryParams]="{nome:nomeProdotto, prezzo: prezzoProd}"
+  (click)="aggiungiElementoAlCarrello(cartForm.value.quantitaProd,prezzoProd,nomeProdotto)">
+    Aggiungi al carrello
+  </button>
+</form>
+
+<app-table
+  [data]="data"
+  (onChangeItem)="onChangeItem($event)"
+  (onDeleteItem)="onDeleteItem($event)"
+  (onInfoItem)="onInfoItem($event)"
+  (onSort)="onSort($event)"
+  (onSearch)="onSearch($event)"
+  >
+</app-table>
+
+  <router-outlet></router-outlet>

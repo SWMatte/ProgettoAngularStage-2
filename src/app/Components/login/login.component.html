@@ -1,0 +1,32 @@
+<div class="container" >
+  <form [formGroup]="loginForm" >
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your username</mat-label>
+        <input matInput placeholder="Username" name="username" formControlName="username" />
+        <mat-icon matSuffix>accessibility</mat-icon>
+      </mat-form-field>
+    </p>
+
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="bottone">
+    <button mat-button type="button" (click)="onSubmit()"> Entra </button>
+     </div>
+  </form>
+</div>
+<ng-template #bloccoElse></ng-template>
+<router-outlet></router-outlet>

@@ -1,0 +1,5 @@
+.example-card {
+  max-width: 400px;
+  margin: 20px;
+  border: solid black 1px;
+}

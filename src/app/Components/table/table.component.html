@@ -1,0 +1,24 @@
+
+<input type="text" (keyup)="onSearchRow($event.target)">
+<table *ngIf="data?.length">
+  <thead>
+    <th *ngFor="let col of columns" (click)="onSortColumn(col)">{{col.name}}</th>
+    <th>EDIT</th>
+    <th>DELETE</th>
+    <th>INFO</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data">
+      <td>{{d.nome}}</td>
+      <td>{{d.prezzo | currency}} x {{d.quantita}}</td>
+      <td (click)="onEditRow(d)">EDIT</td>
+      <td (click)="onDeleteRow(d)">DELETE</td>
+      <td (click)="onInfoRow(d)">INFO</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Totale: </td>
+    </tr>
+  </tfoot>
+</table>

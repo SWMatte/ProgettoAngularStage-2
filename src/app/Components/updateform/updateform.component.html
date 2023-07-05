@@ -1,0 +1,21 @@
+<div class="container" >
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" name="username" formControlName="username" />
+      </mat-form-field>
+    </p>
+
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="text" name="password" formControlName="password" />
+
+      </mat-form-field>
+    </div>
+    <div class="bottone">
+    <button mat-button type="submit" (click)="reindirizza()"> Modifica </button>
+     </div>
+  </form>
+</div>

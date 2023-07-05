@@ -1,0 +1,10 @@
+table,td,tr {
+  width: 50%;
+  border: solid 1px black;
+}
+
+table{
+  border-collapse: collapse;
+  background-color: aliceblue;
+}
+
